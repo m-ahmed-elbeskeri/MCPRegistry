@@ -81,35 +81,15 @@ We are currently comparing three patterns for LLM-to-tool interaction.
 - Distributed cognitive load.
 - Can scale with meta-reasoning or specialized selector models.
 - Ideal for complex multi-app or multi-domain environments.
+- Creates single entry point for discovery
+- This collapses workflows into a clean two-function system.
 
 **Trade-offs:**
 - Requires coordination between multiple LLMs/agents.
 - Higher system complexity.
 - Potential latency.
 
----
-
-## Unified Pattern: Registry_Search & Registry_Execute
-
-Following inspiration from **ACI.dev Unified MCP**, another option is to generalize:
-
-- **`registry_search(intent)`**
-  - Single entry point for discovery.
-  - Returns: best matches, tool schema, and usage hints.
-
-- **`registry_execute(tool_name, params)`**
-  - Executes the chosen tool.
-  - Returns: result or error.
-
-This collapses workflows into a clean two-function system.
-
-**Benefits:**
-- 🧩 Unified approach for all discovery + execution.
-- ⌚️ Minimal LLM context load (constant two functions).
-- ♾ Scalable to unlimited tools.
-- 🔒 Avoids name collisions and auth issues.
-
-This approach feels like the natural destination of the three patterns above. It’s modular and future-proof.
+This approach feels like the natural destination of the  patterns above. 
 
 ---
 
